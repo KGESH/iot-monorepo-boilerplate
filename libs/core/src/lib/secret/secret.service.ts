@@ -5,6 +5,7 @@ import {
   API_GATEWAY_ENV,
   DATABASE_ENV,
   DEVICE_MS_ENV,
+  MQTT_ENV,
   REDIS_ENV,
 } from './enum';
 
@@ -29,6 +30,7 @@ export class SecretService extends ConfigService implements ISecretService {
 
   REDIS_HOST = this.get<string>(REDIS_ENV.REDIS_HOST);
   REDIS_PORT = this.get<number>(REDIS_ENV.REDIS_PORT);
-
   REDIS_URL = this.get<string>(REDIS_ENV.REDIS_URL);
+
+  MQTT_BROKER_URL = this.get<string>(MQTT_ENV.URL);
 }

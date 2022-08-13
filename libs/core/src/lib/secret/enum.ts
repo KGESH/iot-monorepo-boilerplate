@@ -25,3 +25,7 @@ export enum REDIS_ENV {
   REDIS_HOST = 'REDIS_HOST',
   REDIS_PORT = 'REDIS_PORT',
 }
+
+export enum MQTT_ENV {
+  URL = 'MQTT_BROKER_URL',
+}

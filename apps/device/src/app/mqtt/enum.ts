@@ -1,0 +1,3 @@
+export enum MQTT_TOKEN {
+  DEVICE_BROKER = 'MOSQUITTO',
+}
