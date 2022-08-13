@@ -15,6 +15,7 @@
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.0.5",
     "@nestjs/typeorm": "^9.0.1",
     "cache-manager": "^4.1.0",
     "cache-manager-ioredis": "^2.1.0",

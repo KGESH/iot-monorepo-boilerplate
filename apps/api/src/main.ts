@@ -8,6 +8,7 @@ import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
 import { ISecretService } from '@iot-boilerplate/core';
+import { buildSwagger } from './utils/swagger/builder';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -17,9 +18,11 @@ async function bootstrap() {
 
   const port = secretService.API_GATEWAY_PORT || process.env.PORT || 3333;
   const url = secretService.API_GATEWAY_URL;
+  buildSwagger(app);
   await app.listen(port);
+
   Logger.log(
-    `🚀 Application is running on: ${url} http://localhost:${port}/${globalPrefix}`
+    `🚀 Application is running on: http://${url}:${port}/${globalPrefix}`
   );
 }
 

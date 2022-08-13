@@ -1,1 +1,1 @@
-export * from './tests/mock.util';
+export * from './src/lib/tests/mock.util';

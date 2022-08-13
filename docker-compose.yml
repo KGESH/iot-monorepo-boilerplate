@@ -16,5 +16,6 @@ services:
     ports:
       - "6379:6379"
     environment:
-      - REDIS_URL=0.0.0.0
+      - REDIS_HOST=0.0.0.0
+      - REDIS_PORT=6379
 
