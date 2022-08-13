@@ -6,7 +6,6 @@ import { ConnectionService } from './connection.service';
 
 @Module({
   imports: [
-    SecretModule,
     TypeOrmModule.forRootAsync({
       imports: [SecretModule],
       inject: [ISecretService],

@@ -22,4 +22,6 @@ export enum DATABASE_ENV {
 
 export enum REDIS_ENV {
   REDIS_URL = 'REDIS_URL',
+  REDIS_HOST = 'REDIS_HOST',
+  REDIS_PORT = 'REDIS_PORT',
 }

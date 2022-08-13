@@ -5,6 +5,7 @@
     "api": "apps/api",
     "core": "libs/core",
     "device": "apps/device",
-    "entity": "libs/entity"
+    "entity": "libs/entity",
+    "util": "libs/util"
   }
 }

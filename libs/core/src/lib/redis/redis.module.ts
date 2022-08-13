@@ -1,21 +1,15 @@
-import { Global, Module } from '@nestjs/common';
-import { ICacheService } from './adapter';
-import { ISecretService } from '@iot-boilerplate/core';
+import { CacheModule, Global, Module } from '@nestjs/common';
 import { RedisService } from './redis.service';
+import { ISecretService } from '@iot-boilerplate/core';
 
 @Global()
 @Module({
-  providers: [
-    {
-      provide: ICacheService,
+  imports: [
+    CacheModule.registerAsync({
+      useClass: RedisService,
       inject: [ISecretService],
-      useFactory: async ({ REDIS_URL }: ISecretService) => {
-        const cacheService = new RedisService({ url: REDIS_URL });
-        await cacheService.connect();
-        return cacheService;
-      },
-    },
+    }),
   ],
-  exports: [ICacheService],
+  exports: [CacheModule],
 })
 export class RedisModule {}

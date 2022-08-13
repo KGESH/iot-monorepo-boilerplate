@@ -13,7 +13,7 @@ export class ConnectionService implements TypeOrmOptionsFactory {
       database: this.secretService.DATABASE_NAME,
       username: this.secretService.DATABASE_USER,
       password: this.secretService.DATABASE_PASSWORD,
-      port: this.secretService.DATABASE_PORT,
+      port: +this.secretService.DATABASE_PORT,
 
       entities: [],
       autoLoadEntities: true,

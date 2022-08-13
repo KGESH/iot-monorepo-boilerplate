@@ -27,5 +27,8 @@ export class SecretService extends ConfigService implements ISecretService {
   DATABASE_PORT = this.get<number>(DATABASE_ENV.DATABASE_PORT);
   DATABASE_USER = this.get<string>(DATABASE_ENV.DATABASE_USER);
 
+  REDIS_HOST = this.get<string>(REDIS_ENV.REDIS_HOST);
+  REDIS_PORT = this.get<number>(REDIS_ENV.REDIS_PORT);
+
   REDIS_URL = this.get<string>(REDIS_ENV.REDIS_URL);
 }

@@ -17,7 +17,8 @@
     "paths": {
       "@iot-boilerplate/config/core": ["libs/config/core/src/index.ts"],
       "@iot-boilerplate/core": ["libs/core/src/index.ts"],
-      "@iot-boilerplate/entity": ["libs/entity/src/index.ts"]
+      "@iot-boilerplate/entity": ["libs/entity/src/index.ts"],
+      "@iot-boilerplate/util": ["libs/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
