@@ -13,4 +13,4 @@ import { ConnectionService } from './connection.service';
     }),
   ],
 })
-export class ConnectionModule {}
+export class DatabaseModule {}

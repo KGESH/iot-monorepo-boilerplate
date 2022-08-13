@@ -1,13 +1,10 @@
 import { Module } from '@nestjs/common';
-
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { CoreModule } from '@iot-boilerplate/core';
-import { ConnectionModule } from '@iot-boilerplate/core';
+import { HealthController } from './health.controller';
+import { CoreModule, RedisModule } from '@iot-boilerplate/core';
+import { DatabaseModule } from '@iot-boilerplate/core';
 
 @Module({
-  imports: [CoreModule, ConnectionModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [CoreModule, DatabaseModule, RedisModule],
+  controllers: [HealthController],
 })
 export class AppModule {}
