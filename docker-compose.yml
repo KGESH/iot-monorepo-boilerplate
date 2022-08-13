@@ -10,3 +10,11 @@ services:
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
       - POSTGRES_INITDB_ARGS=--encoding=UTF-8
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_URL=0.0.0.0
+

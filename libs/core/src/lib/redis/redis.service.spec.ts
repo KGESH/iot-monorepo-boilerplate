@@ -21,7 +21,7 @@ describe('ICacheService', () => {
 
   describe('connect', () => {
     it('should connect success', async () => {
-      await expect(service.connect()).toEqual('');
+      await expect(service.connect()).toBe('');
     });
   });
 });
