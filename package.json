@@ -4,17 +4,24 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
+    "start:api": "nx serve api --prod",
+    "start:device": "nx serve device",
     "build": "nx build",
     "test": "nx test"
   },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/typeorm": "^9.0.1",
+    "pg": "^8.7.3",
+    "redis": "^4.2.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "typeorm": "^0.3.7"
   },
   "devDependencies": {
     "@nestjs/schematics": "^9.0.0",
@@ -23,7 +30,7 @@
     "@nrwl/eslint-plugin-nx": "14.5.4",
     "@nrwl/jest": "14.5.4",
     "@nrwl/linter": "14.5.4",
-    "@nrwl/nest": "14.5.4",
+    "@nrwl/nest": "^14.5.4",
     "@nrwl/node": "14.5.4",
     "@nrwl/workspace": "14.5.4",
     "@types/jest": "27.4.1",

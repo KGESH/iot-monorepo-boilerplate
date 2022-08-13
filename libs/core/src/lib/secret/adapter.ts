@@ -1,0 +1,18 @@
+import { API_GATEWAY_ENV, DATABASE_ENV, REDIS_ENV } from './enum';
+
+export abstract class ISecretService {
+  API_GATEWAY_URL: API_GATEWAY_ENV | string;
+  API_GATEWAY_PORT: API_GATEWAY_ENV | number;
+
+  DEVICE_MS_URL: API_GATEWAY_ENV | string;
+  DEVICE_MS_PORT: API_GATEWAY_ENV | number;
+
+  DATABASE_TYPE: DATABASE_ENV | string;
+  DATABASE_HOST: DATABASE_ENV | string;
+  DATABASE_NAME: DATABASE_ENV | string;
+  DATABASE_USER: DATABASE_ENV | string;
+  DATABASE_PASSWORD: DATABASE_ENV | string;
+  DATABASE_PORT: number;
+
+  REDIS_URL: REDIS_ENV | string;
+}
