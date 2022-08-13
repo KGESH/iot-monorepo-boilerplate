@@ -7,7 +7,7 @@ export class ConnectionService implements TypeOrmOptionsFactory {
   constructor(private readonly secretService: ISecretService) {}
 
   createTypeOrmOptions(): TypeOrmModuleOptions {
-    const databaseConnection: TypeOrmModuleOptions = {
+    return {
       type: 'postgres', // Todo: Fix type
       host: this.secretService.DATABASE_HOST,
       database: this.secretService.DATABASE_NAME,
@@ -17,10 +17,7 @@ export class ConnectionService implements TypeOrmOptionsFactory {
 
       entities: [],
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: process.env.NODE_ENV !== 'production',
     };
-
-    console.log(`Connection: `, databaseConnection);
-    return databaseConnection;
   }
 }
