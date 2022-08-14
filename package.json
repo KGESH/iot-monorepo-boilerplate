@@ -6,7 +6,8 @@
     "start": "nx serve",
     "start:api": "nx serve api",
     "start:device": "nx serve device",
-    "build": "nx build",
+    "build": "nx run-many --target=build --all --parallel --configuration=production",
+    "deploy": "nx run-many --target=deploy --all --parallel --configuration=production",
     "test": "nx test"
   },
   "private": true,

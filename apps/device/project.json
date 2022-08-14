@@ -3,24 +3,43 @@
   "sourceRoot": "apps/device/src",
   "projectType": "application",
   "targets": {
+    "deploy": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx run-many --target=build --all --parallel --configuration=production",
+          "docker build -f ./apps/device/Dockerfile . -t device"
+        ],
+        "parallel": false
+      }
+    },
     "build": {
       "executor": "@nrwl/node:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/device",
         "main": "apps/device/src/main.ts",
         "tsConfig": "apps/device/tsconfig.app.json",
-        "assets": ["apps/device/src/assets"]
+        "assets": [
+          "apps/device/src/assets"
+        ],
+        "generatePackageJson": true
       },
       "configurations": {
         "production": {
+          "envFiles": [
+            ".env"
+          ],
+          "generatePackageJson": true,
           "optimization": true,
           "extractLicenses": true,
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/device/src/environments/environment.ts",
-              "with": "apps/device/src/environments/environment.prod.ts"
+              "replace": "libs/core/src/lib/secret/environments/environment.ts",
+              "with": "libs/core/src/lib/secret/environments/environment.prod.ts"
             }
           ]
         }
@@ -39,14 +58,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/device/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/device/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/device"],
+      "outputs": [
+        "coverage/apps/device"
+      ],
       "options": {
         "jestConfig": "apps/device/jest.config.ts",
         "passWithNoTests": true
