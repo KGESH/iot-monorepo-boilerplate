@@ -1,36 +1,29 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { ISecretService } from './adapter';
-import {
-  API_GATEWAY_ENV,
-  DATABASE_ENV,
-  DEVICE_MS_ENV,
-  MQTT_ENV,
-  REDIS_ENV,
-} from './enum';
+import { environment } from '@iot-boilerplate/core';
 
 @Injectable()
-export class SecretService extends ConfigService implements ISecretService {
-  constructor() {
-    super();
-  }
+export class SecretService implements ISecretService {
+  /** API Gateway */
+  API_GATEWAY_URL = environment.API_GATEWAY_URL;
+  API_GATEWAY_PORT = environment.API_GATEWAY_PORT;
 
-  API_GATEWAY_URL = this.get<string>(API_GATEWAY_ENV.URL);
-  API_GATEWAY_PORT = this.get<number>(API_GATEWAY_ENV.PORT);
+  /** Device Microservice */
+  DEVICE_MS_URL = environment.DEVICE_MS_URL;
+  DEVICE_MS_PORT = environment.DEVICE_MS_PORT;
 
-  DEVICE_MS_URL = this.get<string>(DEVICE_MS_ENV.URL);
-  DEVICE_MS_PORT = this.get<number>(DEVICE_MS_ENV.PORT);
+  /** Database */
+  DATABASE_TYPE = environment.DATABASE_TYPE;
+  DATABASE_HOST = environment.DATABASE_HOST;
+  DATABASE_NAME = environment.DATABASE_NAME;
+  DATABASE_PASSWORD = environment.DATABASE_PASSWORD;
+  DATABASE_PORT = environment.DATABASE_PORT;
+  DATABASE_USER = environment.DATABASE_USER;
 
-  DATABASE_TYPE = this.get<string>(DATABASE_ENV.DATABASE_TYPE, 'postgres');
-  DATABASE_HOST = this.get<string>(DATABASE_ENV.DATABASE_HOST);
-  DATABASE_NAME = this.get<string>(DATABASE_ENV.DATABASE_NAME);
-  DATABASE_PASSWORD = this.get<string>(DATABASE_ENV.DATABASE_PASSWORD);
-  DATABASE_PORT = this.get<number>(DATABASE_ENV.DATABASE_PORT);
-  DATABASE_USER = this.get<string>(DATABASE_ENV.DATABASE_USER);
+  /** Cache */
+  REDIS_HOST = environment.REDIS_HOST;
+  REDIS_PORT = environment.REDIS_PORT;
 
-  REDIS_HOST = this.get<string>(REDIS_ENV.REDIS_HOST);
-  REDIS_PORT = this.get<number>(REDIS_ENV.REDIS_PORT);
-  REDIS_URL = this.get<string>(REDIS_ENV.REDIS_URL);
-
-  MQTT_BROKER_URL = this.get<string>(MQTT_ENV.URL);
+  /** MQTT Broker */
+  MQTT_BROKER_URL = environment.MQTT_BROKER_URL;
 }

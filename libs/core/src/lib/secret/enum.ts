@@ -11,7 +11,6 @@ export enum DEVICE_MS_ENV {
 export enum JWT_ENV {}
 
 export enum DATABASE_ENV {
-  /** Todo: Refactor db type */
   DATABASE_TYPE = 'DATABASE_TYPE',
   DATABASE_HOST = 'DATABASE_HOST',
   DATABASE_NAME = 'DATABASE_NAME',
