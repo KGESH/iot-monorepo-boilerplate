@@ -3,7 +3,7 @@ import {
   ESlaveConfigTopic,
   ESlaveState,
   ESlaveTurnPowerTopic,
-} from '../topics/api-topic.util';
+} from '@iot-boilerplate/util';
 
 interface IRunningKey {
   sensor: ESlaveState | string;

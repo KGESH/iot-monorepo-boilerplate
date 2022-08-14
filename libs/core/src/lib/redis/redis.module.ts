@@ -1,6 +1,6 @@
 import { CacheModule, Global, Module } from '@nestjs/common';
-import { RedisService } from './redis.service';
 import { ISecretService } from '@iot-boilerplate/core';
+import { RedisService } from './redis.service';
 
 @Global()
 @Module({
