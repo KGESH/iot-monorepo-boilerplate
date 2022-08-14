@@ -11,13 +11,10 @@ export class RedisService implements CacheOptionsFactory {
   constructor(private secretService: ISecretService) {}
 
   createCacheOptions(): CacheModuleOptions {
-    const options: CacheModuleOptions = {
+    return {
       store: redisStore,
       host: this.secretService.REDIS_HOST,
       port: this.secretService.REDIS_PORT,
     };
-    console.log(options);
-
-    return options;
   }
 }

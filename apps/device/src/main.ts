@@ -14,8 +14,6 @@ async function bootstrap() {
   const url = secretService.DEVICE_MS_URL || 'localhost';
   await app.listen(port);
 
-  console.log(`device dir envs:`, { ...environment });
-
   Logger.log(
     `🚀 Application is ${process.env.NODE_ENV}running ${url} on: http://localhost:${port}/${globalPrefix}`
   );

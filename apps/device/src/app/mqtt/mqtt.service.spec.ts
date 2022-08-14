@@ -28,7 +28,6 @@ describe('MQTT Service', () => {
 
   describe('MqttService', () => {
     it('should be define', () => {
-      console.log(mqttService);
       expect(mqttService).toBeDefined();
     });
 

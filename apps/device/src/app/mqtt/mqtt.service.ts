@@ -10,7 +10,6 @@ export class MqttService {
   ) {}
 
   async publish(topic: string, payload: unknown): Promise<void> {
-    console.log(`publish topic: ${topic}, payload: ${payload}`);
     this.broker.emit(topic, payload);
   }
 }

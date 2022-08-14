@@ -8,8 +8,8 @@ import { SWAGGER_TAG } from './enum';
 
 export const buildSwagger = (app: INestApplication): void => {
   const options = new DocumentBuilder()
-    .setTitle('IoT Device MicroService')
-    .setDescription('IoT Device MicroService 문서입니다')
+    .setTitle('IoT ApiGateway')
+    .setDescription('IoT ApiGateway 문서입니다')
     .setVersion('1.0.0')
     .addTag(SWAGGER_TAG.MASTER)
     .addTag(SWAGGER_TAG.SLAVE)

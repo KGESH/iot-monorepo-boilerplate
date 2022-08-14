@@ -15,7 +15,6 @@ async function bootstrap() {
 
   buildSwagger(app);
   await app.listen(port);
-  console.log(`api process env list: `, { ...process.env });
 
   Logger.log(
     `🚀 Application is running on: http://${url}:${port}/${globalPrefix}`

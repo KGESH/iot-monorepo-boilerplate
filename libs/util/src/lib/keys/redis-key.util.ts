@@ -54,15 +54,11 @@ export const GenerateAverageKeys = (
     `temperature/week/${masterId}/${slaveId}/${date}`;
   const keys: string[] = [];
 
-  console.log(beginDate, endDate);
-
   for (
     let date = beginDate;
     date < endDate;
     date = addFunction(date, timeAmount)
   ) {
-    console.log(`loop: `, date, typeof date);
-    console.log(`Formatted: `, format(date, `yyyy/MM/dd`));
     keys.push(generateKey(masterId, slaveId, format(date, `yyyy/MM/dd`)));
   }
 
