@@ -1,3 +1,11 @@
+/** Add your production environment variables
+ *
+ *  at build time
+ *  if build options --configuration=production
+ *  auto replace file name environment.prod.ts -> environment.ts
+ *  example) nx build --configuration=production
+ *  */
+
 export const environment = {
   production: true,
   API_GATEWAY_URL: 'gateway',

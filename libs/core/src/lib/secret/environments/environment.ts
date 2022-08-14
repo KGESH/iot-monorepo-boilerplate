@@ -1,3 +1,27 @@
+/** Add your development environment variables here
+ *
+ *  if you create new app
+ *  replace /apps/your app name/project.json -> "fileReplacements" path
+ *  you can customize your own env path
+ *
+ *  @Before
+ *  "fileReplacements": [
+ *                 {
+ *                   "replace": "apps/your app name/src/environments/environment.ts",
+ *                   "with": "apps/your app name/src/environments/environment.prod.ts"
+ *                 }
+ *               ]
+ *
+ *
+ *  @After
+ * "fileReplacements": [
+ *             {
+ *               "replace": "libs/core/src/lib/secret/environments/environment.ts",
+ *               "with": "libs/core/src/lib/secret/environments/environment.prod.ts"
+ *             }
+ *           ]
+ * */
+
 export const environment = {
   production: false,
   API_GATEWAY_URL: '0.0.0.0',
