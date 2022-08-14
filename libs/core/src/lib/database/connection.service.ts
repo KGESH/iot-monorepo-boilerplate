@@ -8,7 +8,7 @@ export class ConnectionService implements TypeOrmOptionsFactory {
 
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
-      type: 'postgres', // Todo: Fix type
+      type: this.secretService.DATABASE_TYPE,
       host: this.secretService.DATABASE_HOST,
       database: this.secretService.DATABASE_NAME,
       username: this.secretService.DATABASE_USER,
@@ -18,6 +18,6 @@ export class ConnectionService implements TypeOrmOptionsFactory {
       entities: [],
       autoLoadEntities: true,
       synchronize: process.env.NODE_ENV !== 'production',
-    };
+    } as TypeOrmModuleOptions;
   }
 }
