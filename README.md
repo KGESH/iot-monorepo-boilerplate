@@ -10,3 +10,10 @@ Nestjs Monorepo with NX
 - Redis
 - Nestjs
 - NX
+
+---
+
+Installation
+
+<pre>
+</pre>
