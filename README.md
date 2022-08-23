@@ -9,7 +9,7 @@ Nestjs Monorepo with NX
 - TypeORM
 - Redis
 - Nestjs
-- NX
+- NX 
 
 
 ---  
